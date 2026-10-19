@@ -1,906 +1,344 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Pribadi - Creative Developer & Designer</title>
+    <title>Profil Tim Cutting - Presisi & Kualitas Sepatu Indonesia</title>
+    <!-- Tailwind CSS untuk tata letak cepat dan responsif -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Google: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            200: '#bae0fd',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        },
-                        pastel: {
-                            blue: '#e0f2fe',
-                            purple: '#f3e8ff',
-                            pink: '#fce7f3',
-                            orange: '#ffedd5',
-                            teal: '#ccfbf1'
-                        }
+                        'indo-red': '#D6001C',      /* Merah Cabai / Crimson Indonesia */
+                        'indo-red-hover': '#B00017',
+                        'indo-gold': '#D4AF37',     /* Aksen Gold Elegan */
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 3s infinite',
-                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-                            '50%': { opacity: '1', transform: 'scale(1.05)' },
-                        }
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fafbfc;
-            color: #1e293b;
+        /* Pattern Batik Modern Minimalis untuk Hiasan Header */
+        .batik-pattern-border {
+            background: linear-gradient(135deg, #D6001C 25%, #ffffff 25%, #ffffff 50%, #D6001C 50%, #D6001C 75%, #ffffff 75%, #ffffff 100%);
+            background-size: 20px 20px;
         }
-        ::-webkit-scrollbar {
-            width: 10px;
+
+        /* Card Hover Effect */
+        .team-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px -6px rgba(214, 0, 28, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+
+        /* Aspect Ratio 1:1 Khusus Frame Foto */
+        .aspect-square {
+            aspect-ratio: 1 / 1;
         }
     </style>
 </head>
-<body class="overflow-x-hidden text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-white text-gray-800 font-sans min-h-screen flex flex-col justify-between antialiased">
 
-    <!-- Navigation Bar -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="glass-card rounded-2xl px-5 py-3 shadow-sm flex items-center justify-between transition-all duration-300" id="nav-container">
-                <a href="#" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                        A
-                    </div>
-                    <span class="font-bold text-lg tracking-tight text-slate-800 group-hover:text-brand-600 transition-colors">Alex<span class="text-brand-600">.dev</span></span>
-                </a>
+    <!-- MAIN WRAPPER -->
+    <div>
+        <!-- TOP ACCENT BAR (MERAH PUTIH BORDER) -->
+        <div class="h-2 w-full bg-indo-red"></div>
 
-                <nav class="hidden md:flex items-center gap-1 bg-slate-100/70 p-1.5 rounded-full border border-slate-200/60">
-                    <a href="#tentang" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all">Tentang</a>
-                    <a href="#skill" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all">Skill</a>
-                    <a href="#proyek" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all">Proyek</a>
-                    <a href="#pengalaman" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all">Pengalaman</a>
-                    <a href="#testimoni" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-white rounded-full transition-all">Testimoni</a>
-                </nav>
-
-                <div class="hidden md:block">
-                    <a href="#kontak" class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all active:translate-y-0">
-                        <i class="fa-regular me-1 fa-paper-plane"></i> Hubungi Saya
-                    </a>
-                </div>
-
-                <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
-                    <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2">
-            <div class="glass-card rounded-2xl p-5 shadow-xl flex flex-col gap-3">
-                <a href="#tentang" class="mobile-link px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-xl transition-colors">Tentang Saya</a>
-                <a href="#skill" class="mobile-link px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-xl transition-colors">Keahlian & Skill</a>
-                <a href="#proyek" class="mobile-link px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-xl transition-colors">Portofolio Proyek</a>
-                <a href="#pengalaman" class="mobile-link px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-xl transition-colors">Riwayat Pengalaman</a>
-                <a href="#testimoni" class="mobile-link px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600 rounded-xl transition-colors">Testimoni</a>
-                <div class="pt-2 border-t border-slate-100">
-                    <a href="#kontak" class="mobile-link w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-brand-600 text-white text-sm font-semibold rounded-xl shadow-md">
-                        <i class="fa-regular fa-paper-plane"></i> Hubungi Saya
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
-        <!-- Subtle Floating Geometric Shapes Background -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-pastel-blue rounded-full filter blur-3xl opacity-60 animate-float pointer-events-none"></div>
-        <div class="absolute bottom-10 right-10 w-96 h-96 bg-pastel-purple rounded-full filter blur-3xl opacity-50 animate-float-delayed pointer-events-none"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pastel-orange/30 rounded-full filter blur-3xl opacity-40 pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- HEADER / HERO SECTION -->
+        <header class="relative border-b border-gray-100 bg-gradient-to-b from-red-50/40 to-white py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto text-center relative z-10">
                 
-                <!-- Hero Left / Content -->
-                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 text-brand-600 text-xs sm:text-sm font-bold tracking-wide shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        Siap untuk Proyek Baru & Kolaborasi
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                        Halo! Saya <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-indigo-600 to-violet-600">Alex Pratama</span> 👋
-                    </h1>
-
-                    <p class="text-lg sm:text-xl font-medium text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Seorang <span class="text-slate-800 font-semibold underline decoration-brand-500/40 decoration-2 underline-offset-4">Creative Frontend Developer</span> & <span class="text-slate-800 font-semibold underline decoration-indigo-500/40 decoration-2 underline-offset-4">UI/UX Designer</span> yang suka membangun pengalaman digital intuitif, estetis, dan modern.
-                    </p>
-
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#proyek" class="px-7 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-base rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-1 transition-all flex items-center gap-2">
-                            Lihat Karya <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <button onclick="downloadCV()" class="px-7 py-3.5 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-base rounded-xl border border-slate-200 shadow-sm hover:shadow hover:-translate-y-1 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-download text-brand-600"></i> Unduh CV
-                        </button>
-                    </div>
-
-                    <!-- Mini Tech Badges -->
-                    <div class="pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-slate-500">
-                        <span>Teknologi Utama:</span>
-                        <div class="flex items-center gap-3 text-slate-700 text-lg">
-                            <i class="fa-brands fa-react hover:text-sky-500 transition-colors" title="React"></i>
-                            <i class="fa-brands fa-js hover:text-amber-500 transition-colors" title="JavaScript"></i>
-                            <i class="fa-brands fa-html5 hover:text-orange-500 transition-colors" title="HTML5"></i>
-                            <i class="fa-brands fa-figma hover:text-purple-500 transition-colors" title="Figma"></i>
-                            <i class="fa-brands fa-node-js hover:text-emerald-500 transition-colors" title="Node.js"></i>
-                        </div>
-                    </div>
+                <!-- Badge Kebangsaan -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-indo-red font-semibold text-xs uppercase tracking-wider mb-4 border border-red-200">
+                    <span class="w-2 h-2 rounded-full bg-indo-red animate-pulse"></span>
+                    <span>Bangga Buatan Indonesia</span>
                 </div>
 
-                <!-- Hero Right / Avatar Styling -->
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative">
-                        <!-- Glowing ring background effect -->
-                        <div class="absolute -inset-4 rounded-full bg-gradient-to-r from-brand-400 via-indigo-400 to-purple-400 opacity-30 blur-2xl animate-pulse-glow"></div>
-                        
-                        <!-- Main Avatar Container -->
-                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-3 bg-white shadow-2xl border border-slate-100 flex items-center justify-center">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Foto Profil Alex Pratama" class="w-full h-full object-cover rounded-full shadow-inner">
+                <!-- Judul Utama -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-3">
+                    Tim Cutting & Operator Cutting
+                </h1>
+                
+                <!-- Subjudul -->
+                <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto font-normal">
+                    Presisi, Ketelitian, dan Kualitas Terbaik dalam Setiap Potongan Bahan Sepatu Kebanggaan Indonesia.
+                </p>
+
+                <!-- Garis Aksen Batik Minimalis -->
+                <div class="mt-6 flex justify-center items-center gap-2">
+                    <div class="h-[2px] w-12 bg-indo-red"></div>
+                    <div class="w-3 h-3 rotate-45 border-2 border-indo-red bg-white"></div>
+                    <div class="h-[2px] w-12 bg-indo-red"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <!-- SECTION TITLE -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 border-b border-gray-200 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                        <span class="w-2.5 h-6 bg-indo-red rounded-sm inline-block"></span>
+                        Anggota Tim Cutting
+                    </h2>
+                    <p class="text-sm text-gray-500 mt-1">Daftar operator dan pengawas divisi cutting pabrik sepatu.</p>
+                </div>
+                <div class="mt-4 sm:mt-0 bg-gray-50 px-4 py-2 rounded-lg border border-gray-200 text-xs text-gray-600">
+                    Total Anggota saat ini: <span class="font-bold text-indo-red text-sm">6 Orang</span>
+                </div>
+            </div>
+
+            <!-- GRID TIM (GRID CONTAINER) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                <!-- ========================================================================= -->
+                <!-- ANGGOTA 1: SUPERVISOR CUTTING -->
+                <!-- ========================================================================= -->
+                <div class="team-card bg-white rounded-2xl border border-gray-200 p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <!-- Aksen Merah Top Corner -->
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full -z-0"></div>
+
+                    <div class="relative z-10">
+                        <!-- Frame Foto Profil Rasio 1:1 -->
+                        <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 flex items-center justify-center relative group">
+                            <!-- Placeholder Foto (Ganti URL 'src' di bawah jika ada foto asli) -->
+                            <img src="https://placehold.co/400x400/f8fafc/dc2626?text=Foto+1%3A1" 
+                                 alt="Bambang Wijaya" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Profil+1%3A1';">
+                        </div>
+
+                        <!-- Informasi Anggota -->
+                        <div class="text-center">
+                            <!-- Nama Lengkap (Bold) -->
+                            <h3 class="text-lg font-bold text-gray-900 tracking-tight">Bambang Wijaya</h3>
                             
-                            <!-- Floating Badge 1: Experience -->
-                            <div class="absolute -bottom-2 -left-4 glass-card px-4 py-2.5 rounded-2xl shadow-lg border border-white flex items-center gap-3 animate-float">
-                                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold">
-                                    <i class="fa-solid fa-code"></i>
-                                </div>
-                                <div class="text-left">
-                                    <div class="text-xs text-slate-500 font-medium">Spesialisasi</div>
-                                    <div class="text-sm font-bold text-slate-800">Clean Code</div>
-                                </div>
-                            </div>
-
-                            <!-- Floating Badge 2: Rating/Design -->
-                            <div class="absolute top-4 -right-4 glass-card px-4 py-2.5 rounded-2xl shadow-lg border border-white flex items-center gap-3 animate-float-delayed">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
-                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                                </div>
-                                <div class="text-left">
-                                    <div class="text-xs text-slate-500 font-medium">UI/UX</div>
-                                    <div class="text-sm font-bold text-slate-800">Intuitive Design</div>
-                                </div>
-                            </div>
+                            <!-- Jabatan / Role -->
+                            <p class="text-sm font-semibold text-indo-red mt-0.5">Supervisor Cutting</p>
+                            
+                            <!-- Deskripsi Singkat / Catatan (Opsional) -->
+                            <p class="text-xs text-gray-500 mt-2 line-clamp-2">Mengawasi seluruh operasional pemotongan bahan sintesis & kulit.</p>
                         </div>
                     </div>
+
+                    <!-- Badge / Skill Tags -->
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-1.5 justify-center relative z-10">
+                        <span class="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Kepemimpinan</span>
+                        <span class="bg-red-50 text-indo-red text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-red-100">QC Leather</span>
+                    </div>
                 </div>
+
+                <!-- ========================================================================= -->
+                <!-- ANGGOTA 2: SENIOR OPERATOR CUTTING -->
+                <!-- ========================================================================= -->
+                <div class="team-card bg-white rounded-2xl border border-gray-200 p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full -z-0"></div>
+
+                    <div class="relative z-10">
+                        <!-- Frame Foto Profil Rasio 1:1 -->
+                        <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 flex items-center justify-center relative group">
+                            <img src="https://placehold.co/400x400/f8fafc/dc2626?text=Foto+1%3A1" 
+                                 alt="Ahmad Dahlan" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Profil+1%3A1';">
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-gray-900 tracking-tight">Ahmad Dahlan</h3>
+                            <p class="text-sm font-semibold text-indo-red mt-0.5">Senior Operator Cutting</p>
+                            <p class="text-xs text-gray-500 mt-2 line-clamp-2">Spesialis pemotongan pola sepatu olahraga & Upper Leather.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-1.5 justify-center relative z-10">
+                        <span class="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Laser Cutting</span>
+                        <span class="bg-red-50 text-indo-red text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-red-100">Pola Komplex</span>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- ANGGOTA 3: QUALITY CONTROL CUTTING -->
+                <!-- ========================================================================= -->
+                <div class="team-card bg-white rounded-2xl border border-gray-200 p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full -z-0"></div>
+
+                    <div class="relative z-10">
+                        <!-- Frame Foto Profil Rasio 1:1 -->
+                        <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 flex items-center justify-center relative group">
+                            <img src="https://placehold.co/400x400/f8fafc/dc2626?text=Foto+1%3A1" 
+                                 alt="Siti Rahmawati" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Profil+1%3A1';">
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-gray-900 tracking-tight">Siti Rahmawati</h3>
+                            <p class="text-sm font-semibold text-indo-red mt-0.5">Quality Control Cutting</p>
+                            <p class="text-xs text-gray-500 mt-2 line-clamp-2">Memastikan akurasi ukuran dan kelayakan hasil potongan bahan.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-1.5 justify-center relative z-10">
+                        <span class="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Inspeksi Bahan</span>
+                        <span class="bg-red-50 text-indo-red text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-red-100">Zero Defect</span>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- ANGGOTA 4: OPERATOR PRESS HYDRAULIC -->
+                <!-- ========================================================================= -->
+                <div class="team-card bg-white rounded-2xl border border-gray-200 p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full -z-0"></div>
+
+                    <div class="relative z-10">
+                        <!-- Frame Foto Profil Rasio 1:1 -->
+                        <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 flex items-center justify-center relative group">
+                            <img src="https://placehold.co/400x400/f8fafc/dc2626?text=Foto+1%3A1" 
+                                 alt="Eko Prasetyo" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Profil+1%3A1';">
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-gray-900 tracking-tight">Eko Prasetyo</h3>
+                            <p class="text-sm font-semibold text-indo-red mt-0.5">Operator Press Hydraulic</p>
+                            <p class="text-xs text-gray-500 mt-2 line-clamp-2">Penanggung jawab mesin potong hidrolik kapasitas besar.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-1.5 justify-center relative z-10">
+                        <span class="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Mesin Press</span>
+                        <span class="bg-red-50 text-indo-red text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-red-100">K3 Industri</span>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- ANGGOTA 5: OPERATOR PATTERN CUTTING -->
+                <!-- ========================================================================= -->
+                <div class="team-card bg-white rounded-2xl border border-gray-200 p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full -z-0"></div>
+
+                    <div class="relative z-10">
+                        <!-- Frame Foto Profil Rasio 1:1 -->
+                        <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 flex items-center justify-center relative group">
+                            <img src="https://placehold.co/400x400/f8fafc/dc2626?text=Foto+1%3A1" 
+                                 alt="Rian Hidayat" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Profil+1%3A1';">
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-gray-900 tracking-tight">Rian Hidayat</h3>
+                            <p class="text-sm font-semibold text-indo-red mt-0.5">Operator Pattern Cutting</p>
+                            <p class="text-xs text-gray-500 mt-2 line-clamp-2">Ahli dalam persiapan pisau potong dan efisiensi bahan (nesting).</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-1.5 justify-center relative z-10">
+                        <span class="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Nesting Mat</span>
+                        <span class="bg-red-50 text-indo-red text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-red-100">Efisiensi Bahan</span>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- ANGGOTA 6: OPERATOR CUTTING JUNIOR -->
+                <!-- ========================================================================= -->
+                <div class="team-card bg-white rounded-2xl border border-gray-200 p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full -z-0"></div>
+
+                    <div class="relative z-10">
+                        <!-- Frame Foto Profil Rasio 1:1 -->
+                        <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 flex items-center justify-center relative group">
+                            <img src="https://placehold.co/400x400/f8fafc/dc2626?text=Foto+1%3A1" 
+                                 alt="Dewi Kurnia" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Profil+1%3A1';">
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-gray-900 tracking-tight">Dewi Kurnia</h3>
+                            <p class="text-sm font-semibold text-indo-red mt-0.5">Operator Cutting Junior</p>
+                            <p class="text-xs text-gray-500 mt-2 line-clamp-2">Pemotongan bahan komponen pendukung & lining dalam sepatu.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-1.5 justify-center relative z-10">
+                        <span class="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Lining Fabric</span>
+                        <span class="bg-red-50 text-indo-red text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-red-100">Manual Cutting</span>
+                    </div>
+                </div>
+
+
+                <!-- =========================================================================================== -->
+                <!-- 💡 [PANDUAN / PETUNJUK COPY-PASTE UTK ANGGOTA BARU] -->
+                <!-- KOPI PASTE ELEMEN DIV DI BAWAH INI DAN LETAKKAN DI BAWAH ANGGOTA 6 UNTUK MENAMBAH ANGGOTA BARU -->
+                <!-- =========================================================================================== -->
+
+                <!-- 
+                <div class="team-card bg-white rounded-2xl border border-gray-200 p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-red-100 to-transparent rounded-bl-full -z-0"></div>
+
+                    <div class="relative z-10">
+                        <div class="w-full aspect-square bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 flex items-center justify-center relative group">
+                            <img src="GANTI_URL_FOTO_ANDA_DISINI.jpg" 
+                                 alt="NAMA ANGGOTA" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Profil+1%3A1';">
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold text-gray-900 tracking-tight">NAMA ANGGOTA BARU</h3>
+                            <p class="text-sm font-semibold text-indo-red mt-0.5">JABATAN ANGGOTA</p>
+                            <p class="text-xs text-gray-500 mt-2 line-clamp-2">Deskripsi tugas singkat atau keahlian utama anggota baru ini.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap gap-1.5 justify-center relative z-10">
+                        <span class="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Skill 1</span>
+                        <span class="bg-red-50 text-indo-red text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-red-100">Skill 2</span>
+                    </div>
+                </div>
+                -->
 
             </div>
-        </div>
-    </section>
+        </main>
+    </div>
 
-    <!-- About Me Section -->
-    <section id="tentang" class="py-20 relative bg-white border-y border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full">Tentang Saya</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Mengubah Ide Menjadi Pengalaman Digital Yang Menakjubkan</h2>
+    <!-- FOOTER NUSA & BANGSA -->
+    <footer class="mt-16 border-t border-gray-200 bg-white">
+        <!-- Accent Line -->
+        <div class="h-1 w-full bg-gradient-to-r from-indo-red via-red-400 to-indo-red"></div>
+        
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <!-- Bendera Mini -->
+                <div class="w-5 h-3 border border-gray-300 flex flex-col overflow-hidden rounded-sm">
+                    <div class="h-1/2 bg-indo-red"></div>
+                    <div class="h-1/2 bg-white"></div>
+                </div>
+                <span class="text-sm font-bold tracking-wide text-gray-800">BANGGA BUATAN INDONESIA</span>
             </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Bio Text -->
-                <div class="lg:col-span-6 space-y-5 text-slate-600 leading-relaxed reveal">
-                    <h3 class="text-2xl font-bold text-slate-800">Saya Alex, seorang Web Developer & UI Designer yang berdomisili di Jakarta.</h3>
-                    <p>
-                        Berawal dari rasa penasaran bagaimana sebuah situs web bekerja, kini saya telah mengumpulkan pengalaman dalam merancang dan mengembangkan aplikasi web interaktif yang modern, responsif, dan mudah digunakan.
-                    </p>
-                    <p>
-                        Fokus utama saya adalah menciptakan antarmuka pengguna (UI) yang jernih dengan pengalaman pengguna (UX) yang memuaskan, menggunakan kombinasi teknologi web terbaru dan praktik terbaik dalam rekayasa perangkat lunak.
-                    </p>
-                    
-                    <div class="pt-4 flex flex-wrap gap-4 text-sm font-medium">
-                        <div class="flex items-center gap-2 text-slate-700 bg-slate-50 px-4 py-2 rounded-lg border border-slate-200">
-                            <i class="fa-solid fa-location-dot text-brand-600"></i> Jakarta, Indonesia
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-700 bg-slate-50 px-4 py-2 rounded-lg border border-slate-200">
-                            <i class="fa-solid fa-briefcase text-brand-600"></i> Available for Freelance & Fulltime
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Cards Grid -->
-                <div class="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6 reveal">
-                    <div class="bg-gradient-to-br from-slate-50 to-brand-50/50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="text-4xl font-extrabold text-brand-600 mb-2">3+</div>
-                        <div class="font-bold text-slate-800">Tahun Pengalaman</div>
-                        <div class="text-xs text-slate-500 mt-1">Mengembangkan solusi web modern.</div>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-slate-50 to-indigo-50/50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="text-4xl font-extrabold text-indigo-600 mb-2">25+</div>
-                        <div class="font-bold text-slate-800">Proyek Selesai</div>
-                        <div class="text-xs text-slate-500 mt-1">Situs web, UI/UX design & app.</div>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-slate-50 to-emerald-50/50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="text-4xl font-extrabold text-emerald-600 mb-2">100%</div>
-                        <div class="font-bold text-slate-800">Klien Puas</div>
-                        <div class="text-xs text-slate-500 mt-1">Kualitas & tenggat waktu terjamin.</div>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-slate-50 to-amber-50/50 p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="text-4xl font-extrabold text-amber-600 mb-2">15+</div>
-                        <div class="font-bold text-slate-800">Sertifikasi & Skill</div>
-                        <div class="text-xs text-slate-500 mt-1">Terus belajar hal-hal baru.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Expertise Section -->
-    <section id="skill" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full">Keahlian</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Tech Stack & Peralatan Yang Digunakan</h2>
-                <p class="text-slate-600 mt-3">Kombinasi teknologi terbaik untuk membangun produk web kelas tinggi.</p>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 reveal">
-                <!-- Skill Card 1 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-html5"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">HTML5 & CSS3</h3>
-                    <p class="text-xs text-slate-500 mt-1">Semantik, Aksesibilitas & Responsive Web</p>
-                </div>
-
-                <!-- Skill Card 2 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-js"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">JavaScript</h3>
-                    <p class="text-xs text-slate-500 mt-1">ES6+, Asynchronous, & DOM Manipulation</p>
-                </div>
-
-                <!-- Skill Card 3 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-react"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">React JS</h3>
-                    <p class="text-xs text-slate-500 mt-1">Component Based, Hooks, State Mgt</p>
-                </div>
-
-                <!-- Skill Card 4 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">Tailwind CSS</h3>
-                    <p class="text-xs text-slate-500 mt-1">Utility-First & Custom Design System</p>
-                </div>
-
-                <!-- Skill Card 5 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-figma"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">Figma (UI/UX)</h3>
-                    <p class="text-xs text-slate-500 mt-1">Wireframing, Prototyping, Design System</p>
-                </div>
-
-                <!-- Skill Card 6 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-node-js"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">Node.js</h3>
-                    <p class="text-xs text-slate-500 mt-1">REST API Basic & Backend Integration</p>
-                </div>
-
-                <!-- Skill Card 7 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-github"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">Git & GitHub</h3>
-                    <p class="text-xs text-slate-500 mt-1">Version Control & Workflow</p>
-                </div>
-
-                <!-- Skill Card 8 -->
-                <div class="glass-card p-5 rounded-2xl hover:-translate-y-1.5 transition-all duration-300 group border border-slate-200/80 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-gauge-high"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-base">Web Performance</h3>
-                    <p class="text-xs text-slate-500 mt-1">SEO Dasar & Optimasi Kecepatan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="proyek" class="py-20 relative bg-slate-50/50 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10 reveal">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full">Portofolio</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Proyek Pilihan Terbaru</h2>
-                <p class="text-slate-600 mt-3">Kumpulan proyek terbaik yang telah saya selesaikan baru-baru ini.</p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap items-center justify-center gap-2 mb-12 reveal">
-                <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-brand-600 text-white shadow-md">Semua</button>
-                <button onclick="filterProjects('web')" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">Web App</button>
-                <button onclick="filterProjects('uiux')" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">UI/UX Design</button>
-                <button onclick="filterProjects('app')" class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">Mobile Layout</button>
-            </div>
-
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal" id="projects-container">
-                
-                <!-- Project Card 1 -->
-                <div class="project-card web bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                    <div class="relative overflow-hidden aspect-video bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="SaaS Dashboard Analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-xs">
-                            <button onclick="openModal('SaaS Dashboard Analytics', 'Platform dashboard analisis data penjualan & performa real-time untuk bisnis UMKM.', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800', ['React', 'Tailwind', 'Chart.js'])" class="w-10 h-10 rounded-full bg-white text-slate-800 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-600 text-xs font-bold">React</span>
-                                <span class="px-2.5 py-1 rounded-md bg-teal-50 text-teal-600 text-xs font-bold">Tailwind</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-800 group-hover:text-brand-600 transition-colors">SaaS Analytics Dashboard</h3>
-                            <p class="text-slate-600 text-sm mt-2 line-clamp-2">Platform analisis data bisnis dengan grafik interaktif dan ringkasan laporan finansial real-time.</p>
-                        </div>
-                        <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-slate-400">Web Development</span>
-                            <button onclick="openModal('SaaS Dashboard Analytics', 'Platform dashboard analisis data penjualan & performa real-time untuk bisnis UMKM.', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800', ['React', 'Tailwind', 'Chart.js'])" class="text-sm font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
-                                Detail <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="project-card uiux bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                    <div class="relative overflow-hidden aspect-video bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=600" alt="E-Learning App UI/UX" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-xs">
-                            <button onclick="openModal('E-Learning Platform UI Redesign', 'Desain antarmuka aplikasi pembelajaran online modern dengan pengalaman gamifikasi.', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800', ['Figma', 'UI/UX Design', 'Prototype'])" class="w-10 h-10 rounded-full bg-white text-slate-800 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2.5 py-1 rounded-md bg-purple-50 text-purple-600 text-xs font-bold">Figma</span>
-                                <span class="px-2.5 py-1 rounded-md bg-pink-50 text-pink-600 text-xs font-bold">UI/UX</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-800 group-hover:text-brand-600 transition-colors">E-Learning App Redesign</h3>
-                            <p class="text-slate-600 text-sm mt-2 line-clamp-2">Perancangan ulang UI/UX aplikasi edukasi online untuk meningkatkan retensi pengguna.</p>
-                        </div>
-                        <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-slate-400">UI/UX Design</span>
-                            <button onclick="openModal('E-Learning Platform UI Redesign', 'Desain antarmuka aplikasi pembelajaran online modern dengan pengalaman gamifikasi.', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800', ['Figma', 'UI/UX Design', 'Prototype'])" class="text-sm font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
-                                Detail <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="project-card app bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                    <div class="relative overflow-hidden aspect-video bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=600" alt="Health & Fitness Mobile Layout" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-xs">
-                            <button onclick="openModal('FitLife Mobile Companion', 'Aplikasi pelacak kebugaran dan pola makan harian dengan integrasi smartwatch.', 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800', ['React Native', 'Tailwind', 'Redux'])" class="w-10 h-10 rounded-full bg-white text-slate-800 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                                <i class="fa-solid fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-600 text-xs font-bold">React Native</span>
-                                <span class="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-600 text-xs font-bold">Mobile</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-800 group-hover:text-brand-600 transition-colors">FitLife Companion App</h3>
-                            <p class="text-slate-600 text-sm mt-2 line-clamp-2">Layout aplikasi mobile kesehatan untuk mencatat olahraga dan panduan kalori harian.</p>
-                        </div>
-                        <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-slate-400">Mobile Layout</span>
-                            <button onclick="openModal('FitLife Mobile Companion', 'Aplikasi pelacak kebugaran dan pola makan harian dengan integrasi smartwatch.', 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800', ['React Native', 'Tailwind', 'Redux'])" class="text-sm font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
-                                Detail <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience & Timeline Section -->
-    <section id="pengalaman" class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full">Perjalanan Karir</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Pengalaman Kerja & Pendidikan</h2>
-            </div>
-
-            <!-- Timeline Container -->
-            <div class="max-w-3xl mx-auto relative border-l-2 border-slate-200 ml-4 sm:ml-auto">
-                
-                <!-- Item 1 -->
-                <div class="mb-10 ml-6 relative group reveal">
-                    <!-- Dot -->
-                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-brand-600 group-hover:scale-125 transition-transform"></div>
-                    <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80">
-                        <span class="px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold rounded-md inline-block mb-2">2023 - Sekarang</span>
-                        <h3 class="text-xl font-bold text-slate-800">Senior Frontend Developer</h3>
-                        <div class="text-sm font-semibold text-slate-500 mb-3">PT Tech Inovasi Digital</div>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Memimpin tim frontend dalam membangun platform e-commerce berskala besar. Mengoptimalkan performa halaman hingga 40% lebih cepat dan menerapkan design system terstandar.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="mb-10 ml-6 relative group reveal">
-                    <!-- Dot -->
-                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-indigo-600 group-hover:scale-125 transition-transform"></div>
-                    <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80">
-                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-bold rounded-md inline-block mb-2">2021 - 2023</span>
-                        <h3 class="text-xl font-bold text-slate-800">UI/UX & Web Developer</h3>
-                        <div class="text-sm font-semibold text-slate-500 mb-3">Studio Creative Studio</div>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Merancang wireframe, prototype Figma, dan mengimplementasikannya menjadi kode HTML/CSS/JS yang responsif untuk berbagai klien internasional.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="ml-6 relative group reveal">
-                    <!-- Dot -->
-                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-emerald-600 group-hover:scale-125 transition-transform"></div>
-                    <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80">
-                        <span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-md inline-block mb-2">2017 - 2021</span>
-                        <h3 class="text-xl font-bold text-slate-800">S1 Teknik Informatika</h3>
-                        <div class="text-sm font-semibold text-slate-500 mb-3">Universitas Teknologi Indonesia</div>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Lulus dengan predikat Cumlaude. Aktif dalam organisasi kampus di bidang rekayasa perangkat lunak dan desain grafis.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimoni" class="py-20 relative bg-slate-50/50 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full">Testimoni</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3">Apa Kata Klien & Rekan Kerja</h2>
-            </div>
-
-            <!-- Testimonials Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-                <!-- Card 1 -->
-                <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 text-sm mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-sm italic mb-6">"Alex adalah developer yang sangat komunikatif dan detail. Hasil desain & kodenya sangat bersih, melebihi ekspektasi tim kami."</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Budi Santoso" class="w-10 h-10 rounded-full object-cover">
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Budi Santoso</div>
-                            <div class="text-xs text-slate-500">CEO di StartUpKita</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 text-sm mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-sm italic mb-6">"Pengerjaan cepat, responsif di mobile sangat rapi, dan mampu memberikan masukan UI/UX yang solutif!"</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" alt="Siti Rahma" class="w-10 h-10 rounded-full object-cover">
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Siti Rahma</div>
-                            <div class="text-xs text-slate-500">Product Manager</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80 flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-400 gap-1 text-sm mb-4">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-600 text-sm italic mb-6">"Kerjasama yang luar biasa. Sangat direkomendasikan untuk Anda yang mencari frontend dev berkualitas tinggi."</p>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" alt="Rian Pratama" class="w-10 h-10 rounded-full object-cover">
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Rian Pratama</div>
-                            <div class="text-xs text-slate-500">Founder Agency Digital</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="kontak" class="py-20 relative bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                
-                <!-- Left Info -->
-                <div class="lg:col-span-5 space-y-6 reveal">
-                    <span class="text-brand-600 font-bold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full">Kontak</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">Mari Berdiskusi & Buat Sesuatu Yang Hebat!</h2>
-                    <p class="text-slate-600 leading-relaxed">
-                        Punya proyek menarik, pertanyaan, atau sekadar ingin menyapa? Jangan ragu untuk menghubungi saya melalui formulir ini atau media sosial.
-                    </p>
-
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-regular fa-envelope"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 font-medium">Email Saya</div>
-                                <div class="text-sm font-bold text-slate-800">alex.pratama@example.com</div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-500 font-medium">WhatsApp</div>
-                                <div class="text-sm font-bold text-slate-800">+62 812 3456 7890</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Media Links -->
-                    <div class="pt-4">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Ikuti Saya</div>
-                        <div class="flex gap-3">
-                            <a href="#" aria-label="GitHub" class="w-11 h-11 rounded-xl bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-700 flex items-center justify-center text-lg transition-all duration-300">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="#" aria-label="LinkedIn" class="w-11 h-11 rounded-xl bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 flex items-center justify-center text-lg transition-all duration-300">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-xl bg-slate-100 hover:bg-pink-600 hover:text-white text-slate-700 flex items-center justify-center text-lg transition-all duration-300">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a href="#" aria-label="Twitter X" class="w-11 h-11 rounded-xl bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-700 flex items-center justify-center text-lg transition-all duration-300">
-                                <i class="fa-brands fa-x-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Interactive Form -->
-                <div class="lg:col-span-7 reveal">
-                    <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-lg">
-                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label for="name" class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap</label>
-                                    <input type="text" id="name" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-bold text-slate-700 mb-2">Alamat Email</label>
-                                    <input type="email" id="email" required placeholder="nama@domain.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="subject" class="block text-sm font-bold text-slate-700 mb-2">Subjek Pesan</label>
-                                <input type="text" id="subject" required placeholder="Penawaran Proyek / Pertanyaan" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
-                            </div>
-
-                            <div>
-                                <label for="message" class="block text-sm font-bold text-slate-700 mb-2">Pesan Anda</label>
-                                <textarea id="message" rows="4" required placeholder="Tuliskan pesan atau detail proyek Anda di sini..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all resize-none"></textarea>
-                            </div>
-
-                            <button type="submit" id="submit-btn" class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold text-base rounded-xl shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-paper-plane"></i> Kirim Pesan Sekarang
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-                <!-- Brand -->
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">A</div>
-                    <span class="text-white font-bold text-lg">Alex<span class="text-brand-500">.dev</span></span>
-                </div>
-
-                <!-- Copyright -->
-                <div class="text-xs sm:text-sm text-center">
-                    &copy; <span id="current-year"></span> Alex Pratama. Dibuat dengan <i class="fa-solid fa-heart text-rose-500 mx-1"></i> & Tailwind CSS.
-                </div>
-
-                <!-- Back To Top Button -->
-                <button onclick="scrollToTop()" class="w-10 h-10 rounded-xl bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors shadow-md" title="Kembali ke atas">
-                    <i class="fa-solid fa-arrow-up"></i>
-                </button>
-            </div>
+            <p class="text-xs text-gray-500">
+                Divisi Cutting & Machine Operator &bull; Pabrik Sepatu Indonesia &bull; Presisi Dalam Setiap Langkah
+            </p>
+            <p class="text-[11px] text-gray-400 mt-3">
+                &copy; 2026 Tim Cutting Sepatu. Hak Cipta Dilindungi.
+            </p>
         </div>
     </footer>
 
-    <!-- Project Detail Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity">
-        <div class="glass-card bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 relative animate-float-delayed">
-            <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center z-10 transition-colors">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            
-            <img id="modal-img" src="" alt="Project Preview" class="w-full h-64 object-cover rounded-t-3xl">
-            
-            <div class="p-6 sm:p-8 space-y-4">
-                <div id="modal-tags" class="flex flex-wrap gap-2"></div>
-                <h3 id="modal-title" class="text-2xl font-bold text-slate-800"></h3>
-                <p id="modal-desc" class="text-slate-600 text-sm leading-relaxed"></p>
-                
-                <div class="pt-4 flex gap-3">
-                    <button onclick="closeModal()" class="w-full py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 transition-colors">
-                        Tutup Modal
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notification Toast -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden glass-card bg-white border border-slate-200 px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform translate-y-10">
-        <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">
-            <i class="fa-solid fa-circle-check"></i>
-        </div>
-        <div>
-            <div class="text-sm font-bold text-slate-800" id="toast-title">Berhasil!</div>
-            <div class="text-xs text-slate-500" id="toast-message">Pesan Anda telah terkirim.</div>
-        </div>
-    </div>
-
-    <!-- JavaScript Logic -->
-    <script>
-        // Set year in footer dynamically
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 30) {
-                navbar.classList.add('py-2');
-                navbar.classList.remove('py-4');
-            } else {
-                navbar.classList.add('py-4');
-                navbar.classList.remove('py-2');
-            }
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.replace('fa-xmark', 'fa-bars');
-            } else {
-                menuIcon.classList.replace('fa-bars', 'fa-xmark');
-            }
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.replace('fa-xmark', 'fa-bars');
-            });
-        });
-
-        // Filter Projects logic
-        function filterProjects(category) {
-            const cards = document.querySelectorAll('.project-card');
-            const buttons = document.querySelectorAll('.filter-btn');
-
-            buttons.forEach(btn => {
-                btn.classList.remove('bg-brand-600', 'text-white', 'shadow-md');
-                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-            });
-
-            event.target.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-            event.target.classList.add('bg-brand-600', 'text-white', 'shadow-md');
-
-            cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Modal Logic
-        function openModal(title, desc, imgSrc, tags) {
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-desc').textContent = desc;
-            document.getElementById('modal-img').src = imgSrc;
-            
-            const tagsContainer = document.getElementById('modal-tags');
-            tagsContainer.innerHTML = '';
-            tags.forEach(tag => {
-                const badge = document.createElement('span');
-                badge.className = 'px-3 py-1 bg-brand-50 text-brand-600 text-xs font-bold rounded-md';
-                badge.textContent = tag;
-                tagsContainer.appendChild(badge);
-            });
-
-            document.getElementById('project-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('project-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Scroll Reveal Effect using IntersectionObserver
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Form Handler with Feedback
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const submitBtn = document.getElementById('submit-btn');
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fa-solid fa-spinner animate-spin me-2"></i> Mengirim...`;
-
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = `<i class="fa-regular fa-paper-plane me-2"></i> Kirim Pesan Sekarang`;
-                document.getElementById('contact-form').reset();
-                showToast('Pesan Terkirim!', 'Terima kasih, saya akan merespon pesan Anda segera.');
-            }, 1500);
-        }
-
-        // Toast Helper
-        function showToast(title, message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-title').textContent = title;
-            document.getElementById('toast-message').textContent = message;
-
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.remove('translate-y-10');
-            }, 10);
-
-            setTimeout(() => {
-                toast.classList.add('translate-y-10');
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                }, 300);
-            }, 4000);
-        }
-
-        // Download CV Dummy Function
-        function downloadCV() {
-            showToast('Mengunduh CV', 'Berkas CV Alex Pratama sedang diunduh.');
-        }
-
-        // Back to top function
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    </script>
 </body>
 </html>
